@@ -36,14 +36,18 @@ async def cookie(ctx):
 @client.event
 async def on_raw_reaction_add(payload):
     #We can actually add this to Timmy because of the message ID system
-    print("Hello")
+
     print(payload.emoji.name)
     print(payload.message_id)
     print(commandmessageID)
     #setting variables for payload contents
+    user_name = payload.member.name
+    #user_name = user_name.split('#',1)[0]
+    print(user_name)
+
     message_id = payload.message_id
     if message_id == commandmessageID:
-        print("Debug")
+        
         #print(payload.me)
     #compare the ID of the specific role message so the bot only responds to this specific role message,
     # don't want bot responding to random messages. 
@@ -52,16 +56,17 @@ async def on_raw_reaction_add(payload):
         
         #roles = discord.utils.get(guild.roles, name='C++')
         if payload.emoji.name == 'yes':
-            print("print in discord")
+            
             channel_id = payload.channel_id
             channel = client.get_channel(channel_id)
-            await channel.send(f' Here you go :cookie:!')
+            await channel.send(f' Here you go {user_name} :cookie:! ')
+            
 
             #this is finds the role based on the name but doesn't actually ad user
             #role = discord.utils.get(guild.roles, name='bomb')
 
         if payload.emoji.name == 'no':
-            print("print in discord")
+            
             channel_id = payload.channel_id
             channel = client.get_channel(channel_id)
             await channel.send(f' Alright then')
@@ -81,4 +86,4 @@ async def on_raw_reaction_add(payload):
 #    print(x)
 #    loop.close()
 
-client.run('TOKEN')
+client.run('OTkxNzYxOTQ1Mzg2NTY1Njcz.GcFBTe.X4zs63PGiFywekUOJn3Ca1opLclPK076Uktg08')

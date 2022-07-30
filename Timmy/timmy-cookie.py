@@ -86,4 +86,4 @@ async def on_raw_reaction_add(payload):
 #    print(x)
 #    loop.close()
 
-client.run('OTkxNzYxOTQ1Mzg2NTY1Njcz.GcFBTe.X4zs63PGiFywekUOJn3Ca1opLclPK076Uktg08')
+client.run(TOKEN)

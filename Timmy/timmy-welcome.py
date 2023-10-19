@@ -72,4 +72,4 @@ async def welcome(ctx):
 	#print(commandmessageID)
 
 
-client.run('OTkxNzYxOTQ1Mzg2NTY1Njcz.GCqF_g.ApnkIE8NnuEi1Nu9oysdUka7dyGMwgG3xHptE4')
+client.run('')
